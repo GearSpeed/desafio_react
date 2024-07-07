@@ -1,3 +1,4 @@
+import Link from "next/link"
 export default function NavBar(){
     return (
         <nav className="bg-[#FFFFFF] max-w-full h-14 flex justify-between pl-20 xl:pr-20 pt-2 pb-2">
@@ -37,7 +38,7 @@ export default function NavBar(){
                     <a href="#">Log In</a>
                 </div>
                 <div className="border rounded-md min-w-36 font-semibold hover:underline hover:text-white hover: hover:bg-blue-600 cursor-pointer text-blue-600 border-blue-600 flex justify-center items-center ">
-                    <a href="#">Create account</a>
+                    <Link href="/signUp" >Create account</Link>
                 </div>
            </div>
         </nav>

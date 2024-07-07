@@ -1,4 +1,5 @@
 import SignUpOptions from "./components/SignUpOptions"
+import Link from "next/link"
 export default function SignUp() {
     return (
         <div 
@@ -62,7 +63,7 @@ export default function SignUp() {
                 </div>
                 <div className="not-italic text-base">
                     <span className="text-black">Already have an account? </span>
-                    <span className="text-[#3B49E1] cursor-pointer" >Log in.</span>
+                    <Link href='/login' className="text-[#3B49E1]" >Log in.</Link>
                 </div>
             </footer>
             

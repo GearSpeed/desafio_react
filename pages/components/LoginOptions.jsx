@@ -1,42 +1,36 @@
-import { useRouter } from "next/router"
-export default function SignUpOptions(){
-    const router = useRouter()
-    const signUpItems = [
+export default function LogInOptions(){
+    const LogInItems = [
         {
             icon:'/apple.svg',
-            span:'Sign up with Apple',
+            span:'Continue with Apple',
         },
         {
             icon:'/facebook.svg',
-            span:'Sign up with Facebook',
+            span:'Continue with Facebook',
         },
         {
             icon:'https://account.forem.com/assets/smiley-8750f55ac3131b76c24bab0d8a76c0ca4384a76efa121519b8c3164ba34a8e53.png',
-            span:'Sign up with Forem',
+            span:'Continue with Forem',
         },
         {
             icon:'/gitHub.svg',
-            span:'Sign up with GitHub',
+            span:'Continue with GitHub',
         },
         {
             icon:'/google.svg',
-            span:'Sign up with Google',
+            span:'Continue with Google',
         },
         {
             icon:'/twitter.svg',
-            span:'Sign up with Twitter (X)',
-        },
-        {
-            icon:'/email.svg',
-            span:'Sign up with Email',
+            span:'Continue with Twitter (X)',
         },
     ]
 
 return(
-    signUpItems.map((item) => {
+    LogInItems.map((item) => {
         return(
             <>
-                <div className="
+                <div key={`key-${item.span}`} className="
                     flex 
                     flex-row
                     border
@@ -59,13 +53,7 @@ return(
                         absolute
                         left-2
                     " src={`${item.icon}`} alt="" />
-                    <button className="
-                        size-full
-                    " onClick={() => {
-                        router.push(item.span==='Sign up with Email' ? '/email_signUp' : '#')
-                    }} >
-                        {item.span}
-                    </button>
+                    <span>{item.span}</span>
                 </div>
             
             </>
