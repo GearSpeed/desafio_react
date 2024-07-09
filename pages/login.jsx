@@ -1,4 +1,4 @@
-import { toast } from "sonner"
+import { toast, Toaster } from "sonner"
 import { login } from "./api/apiBackEnd"
 import LogInOptions from "./components/LoginOptions"
 import { useRouter } from "next/router"
@@ -19,7 +19,7 @@ export default function LogIn() {
             if (token) {
                 window.localStorage.setItem('token', token)
                 toast.success("Bienvenido (a)")
-                router.push('/index')
+                router.push('/')
             }else{
                 toast.error("Usuario o contraseña incorrectos")
                 setError('root.credentials', {
@@ -93,6 +93,7 @@ export default function LogIn() {
                     <h1 className="font-semibold">Email</h1>
                     <input className="
                         h-10
+                        p-4
                         border
                         focus-within:border-blue-700 
                         focus-within:hover:border-blue-700
@@ -110,6 +111,7 @@ export default function LogIn() {
                     <h1 className="font-semibold">Password</h1>
                     <input className="
                         h-10
+                        p-4
                         border
                         focus-within:border-blue-700 
                         focus-within:hover:border-blue-700
@@ -124,6 +126,7 @@ export default function LogIn() {
                             message: 'Contraseña requerida',
                         }
                     })} />
+                    <Toaster /> 
                     <button className="
                         h-12
                         rounded-lg

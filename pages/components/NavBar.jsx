@@ -1,4 +1,5 @@
 import Link from "next/link"
+
 export default function NavBar(){
     return (
         <nav className="bg-[#FFFFFF] max-w-full h-14 flex justify-between pl-20 xl:pr-20 pt-2 pb-2">
