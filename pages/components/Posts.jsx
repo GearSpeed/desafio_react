@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
-import { getPosts } from "../api/apiBackEnd"
+import { getPosts} from "../api/apiBackEnd"
 import { toast } from "sonner"
 
 export default function Posts(){
 
     const [posts, setPosts] = useState([])
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    const numericMonths = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
 
     useEffect(() => {
         getPosts()
@@ -52,24 +54,30 @@ export default function Posts(){
                     hover:text-[#3B49DF]
                 ">Top</h1>
             </div>
+
             <div className="
                 w-full
                 flex
                 flex-col
-                bg-white
-                rounded-lg
-                pb-8
+                gap-2
             ">
 
                 {
-                    posts.map((cont, idx) => {
+                    posts.map((cont, idx) => { 
                         return(
-                            <>
+                            <div key={`key-${idx}`} className="
+                            w-full
+                            flex
+                            flex-col
+                            bg-white
+                            rounded-lg
+                            pb-8
+                        ">
 
                                 <img className="
                                     w-full
                                     rounded-t-lg
-                                " src="https://imgs.search.brave.com/BWn2ZkEOnHxoCZDzIemCAb2d2anSn-jSEBkT-FbBBA0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9jYW5hZGlhbi1t/b3VudGFpbi1sYW5k/c2NhcGUtbmF0dXJl/LWJhY2tncm91bmQt/c3Vuc2V0XzY0NTg4/Mi0xMjU1Ni5qcGc_/c2l6ZT02MjYmZXh0/PWpwZw" alt="" 
+                                " src={cont.image} alt={cont.title} 
                                 />
                                 <div className="
                                     w-full
@@ -80,7 +88,7 @@ export default function Posts(){
                                     <img className="
                                         size-10
                                         rounded-full
-                                    " src="https://imgs.search.brave.com/JLmCvOzUW0TXutsulsNiriUdvcbxhtIKdcfMxN2BI30/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA0Lzk1LzE1Lzc5/LzM2MF9GXzQ5NTE1/Nzk3MV96SWh6amZ4/M3lHMUFzZ1lPVFFT/OVo2VkhBc04wT0pT/SS5qcGc" alt="" 
+                                    " src={cont.user.profilePic} alt= {cont.user.userName}
                                     />
                                     <div className="
                                         w-full
@@ -89,29 +97,28 @@ export default function Posts(){
                                     " > 
                                         <h1 className="
                                             font-semibold
-                                        ">Name</h1>
+                                        ">{cont.user.name}</h1>
                                         <span className="
                                             text-xs
                                             text-[#ACACAC]
-                                        " >Jul 8</span>
+                                        " >{
+                                            cont.updated_at.substring(0, 7)
+                                        }</span>
                                     </div>
                                 </div>
-                                
-                            </>
+                                <div className="
+                                    w-full
+                                    pl-16
+                                ">
+                                    <h1 className="
+                                        text-3xl
+                                        font-bold
+                                    ">{cont.title}</h1>
+                                </div>
+                        </div>
                         )
                     })
                 }
-
-                
-                <div className="
-                    w-full
-                    pl-16
-                ">
-                    <h1 className="
-                        text-3xl
-                        font-bold
-                    ">Title8</h1>
-                </div>
             </div>
         </div>
     )
