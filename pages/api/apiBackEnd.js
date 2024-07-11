@@ -1,4 +1,4 @@
-const API_URL = "https://api-33.sampayo.lat";
+const API_URL = "http://localhost:8081";
 
 export async function signUp(name, profilePic, userName, email, password) {
   const response = await fetch(`${API_URL}/user`, {
@@ -51,14 +51,36 @@ export async function login(email, password) {
 }
 
 export async function getPosts() {
-  const token = localStorage.getItem("token");
   const response = await fetch(`${API_URL}/post`, {
     method: "GET",
     headers: {
-      Authorization: token,
+      "Content-Type": "application/json",
     },
   });
 
   const json = await response.json();
   return json.data.posts;
+}
+
+export async function getPost(id) {
+  const response = await fetch(`${API_URL}/post/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  const json = await response.json();
+  return json.data.post;
+}
+
+export async function getUser(id) {
+  const response = await fetch(`${API_URL}/user/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const json = await response.json();
+  return json.data.user;
 }

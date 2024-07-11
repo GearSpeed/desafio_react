@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getPosts} from "../api/apiBackEnd"
 import { toast } from "sonner"
+import Link from "next/link"
 
 export default function Posts(){
 
@@ -110,10 +111,10 @@ export default function Posts(){
                                     w-full
                                     pl-16
                                 ">
-                                    <h1 className="
+                                    <Link href={`/detailPost/${cont._id}`} className="
                                         text-3xl
                                         font-bold
-                                    ">{cont.title}</h1>
+                                    ">{cont.title}</Link>
                                 </div>
                         </div>
                         )
