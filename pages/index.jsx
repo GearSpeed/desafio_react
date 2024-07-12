@@ -22,24 +22,31 @@ export default function Home() {
         border 
         border-gray-300
         flex
+        gap-4
         justify-center
       ">
         <article className="
           w-1/4
-          bg-red-300
+          hidden
+          lg:flex
         ">
           <Article />
         </article>
         <aside className="
           w-1/2
+          min-w-96
         ">
           <Posts />
         </aside>
         <div className="
-          w-1/4
-          bg-green-300
+          w-1/3
         ">
-          <Discuss />
+          <div className="hidden lg:flex flex-col justify-end bg-white p-4 rounded-lg border">
+            <div className="h-14 rounded-t-md">
+              <p className="font-bold text-xl pl-3 pt-3">Active discussions</p>
+            </div>
+            <Discuss />
+          </div>
         </div>
       </div>
     </main>

@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8081";
+const API_URL = "https://ec2-52-23-211-70.compute-1.amazonaws.com";
 
 export async function signUp(name, profilePic, userName, email, password) {
   const response = await fetch(`${API_URL}/user`, {
