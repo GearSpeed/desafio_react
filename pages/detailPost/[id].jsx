@@ -41,9 +41,11 @@ export default function DetailPost(){
                     items-start
                     gap-4
                     pt-4
+                    p-4
                     ">
                     <div className="
-                        w-1/2
+                        lg:w-1/2
+                        w-full
                         flex
                         flex-col
                         justify-center
@@ -91,6 +93,7 @@ export default function DetailPost(){
                             <h6 className="
                                 text-xl
                                 pt-8
+                                pr-4
                             ">{post.body}</h6>
                         </div>
                     </div>
