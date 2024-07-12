@@ -13,8 +13,7 @@ export default function Home() {
       <div className="
         bg-[#F5F5F5]
         w-full
-        h-[647px]
-        max-h-[647px]
+        h-screen
         overflow-y-auto
         p-4
         pl-28
