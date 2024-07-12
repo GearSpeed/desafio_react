@@ -1,4 +1,4 @@
-const API_URL = "https://ec2-52-23-211-70.compute-1.amazonaws.com";
+const API_URL = "https://backend-desafio-97wq.onrender.com";
 
 export async function signUp(name, profilePic, userName, email, password) {
   const response = await fetch(`${API_URL}/user`, {

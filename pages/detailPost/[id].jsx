@@ -88,10 +88,10 @@ export default function DetailPost(){
                                 lg:text-6xl
                                 font-bold
                             ">{post.title}</h1>
-                            <p className="
+                            <h6 className="
                                 text-xl
                                 pt-8
-                            ">{post.body}</p>
+                            ">{post.body}</h6>
                         </div>
                     </div>
                     <div className="

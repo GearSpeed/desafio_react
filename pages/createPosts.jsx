@@ -17,6 +17,7 @@ export default  function upPost(){
         try {
             createPost(data.titlePost, data.contentPost, data.imgPost)
             toast.success("Registro exitoso!!!")
+            console.log("Registro listo")
             router.push("/")
         } catch (error) {
             toast.error("Error al iniciar sesión")
