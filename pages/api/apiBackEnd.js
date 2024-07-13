@@ -1,6 +1,9 @@
 const API_URL = "https://backend-desafio-97wq.onrender.com";
 
 export async function signUp(name, profilePic, userName, email, password) {
+  if (!profilePic)
+    profilePic =
+      "https://imgs.search.brave.com/5juHS53Y4trr3LQKd1FtB45PY5vMe8yQFzi_g-MQIT0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/dmVjdG9yc3RvY2su/Y29tL2kvNTAwcC81/NS82Ny9uby1pbWFn/ZS1hdmFpbGFibGUt/cGljdHVyZS12ZWN0/b3ItMzE1OTU1Njcu/anBn";
   const response = await fetch(`${API_URL}/user`, {
     method: "POST",
     headers: {

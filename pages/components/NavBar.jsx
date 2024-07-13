@@ -33,7 +33,7 @@ export default function NavBar(){
         <nav className="bg-[#FFFFFF] max-w-full h-14 flex justify-between pl-20 xl:pr-20 pt-2 pb-2">
             <div className="flex w-full gap-4">
                 <img className="size-8 cursor-pointer md:hidden"  src="/burgerMenu.svg" alt="" />
-                <img src="https://media.dev.to/cdn-cgi/image/quality=100/https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" alt="" />
+                <img className="cursor-pointer"  src="https://media.dev.to/cdn-cgi/image/quality=100/https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png" alt="" />
                 <div 
                     className="
                         hidden 
