@@ -19,6 +19,9 @@ export async function signUp(name, profilePic, userName, email, password) {
 
 export async function createPost(titlePost, contentPost, img) {
   const token = localStorage.getItem("token");
+  const notImage =
+    "https://imgs.search.brave.com/OD4d2lCjWhnqHPFjhYsCBotq5IIUXGK-DXSDPzeRt48/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAwLzYyLzI2Lzc4/LzM2MF9GXzYyMjY3/ODcxX3QxbjhMU2ty/RlNMMnQxYVFTeWls/eWZWcEMyMXdReDU5/LmpwZw";
+  if (!img) img = notImage;
   const response = await fetch(`${API_URL}/post`, {
     method: "POST",
     headers: {
