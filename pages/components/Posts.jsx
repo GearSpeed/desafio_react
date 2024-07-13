@@ -6,8 +6,6 @@ import Link from "next/link"
 export default function Posts(){
 
     const [posts, setPosts] = useState([])
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    const numericMonths = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
 
     useEffect(() => {
         getPosts()
@@ -59,7 +57,7 @@ export default function Posts(){
             <div className="
                 w-full
                 flex
-                flex-col
+                flex-col-reverse
                 gap-2
             ">
 
